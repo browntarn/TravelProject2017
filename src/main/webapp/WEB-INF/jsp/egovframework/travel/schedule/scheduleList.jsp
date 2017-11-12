@@ -26,29 +26,26 @@
 	       		<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블">
 	       			<caption style="visibility:hidden">카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블</caption>
 	       			<colgroup>
-	       				<col width="40"/>
-	       				<col width="100"/>
-	       				<col width="150"/>
-	       				<col width="80"/>
-	       				<col width="?"/>
 	       				<col width="60"/>
+	       				<col width="100"/>
+	       				<col width="?"/>
+	       				<col width="110"/>
+	       				<col width="110"/>
 	       			</colgroup>
 	       			<tr>
-	       				<th align="center">No</th>
-	       				<th align="center"><spring:message code="title.sample.id" /></th>
-	       				<th align="center"><spring:message code="title.sample.name" /></th>
-	       				<th align="center"><spring:message code="title.sample.useYn" /></th>
-	       				<th align="center"><spring:message code="title.sample.description" /></th>
-	       				<th align="center"><spring:message code="title.sample.regUser" /></th>
+	       				<th align="center">지역코드</th>
+	       				<th align="center">명칭</th>
+	       				<th align="center">주소</th>
+	       				<th align="center">전화번호</th>
+	       				<th align="center">위치</th>
 	       			</tr>
-	       			<c:forEach begin="1" end="10" varStatus="status">
+	       			<c:forEach var="result" items="${resultList}" varStatus="status">
 	           			<tr>
-	           				<td align="center" class="listtd"></td>
-	           				<td align="center" class="listtd"></td>
-	           				<td align="left" class="listtd"></td>
-	           				<td align="center" class="listtd"></td>
-	           				<td align="center" class="listtd"></td>
-	           				<td align="center" class="listtd"></td>
+	           				<td align="center" class="listtd"><c:out value="${result.areacode}"/></td>
+	           				<td align="left" class="listtd"><c:out value="${result.title}"/></td>
+	           				<td align="center" class="listtd"><c:out value="${result.addr1} ${result.addr2}"/></td>
+	           				<td align="center" class="listtd"><c:out value="${result.tel}"/></td>
+	           				<td align="center" class="listtd"><c:out value="${result.mapx}, ${result.mapy}"/></td>
 	           			</tr>
 	       			</c:forEach>
 	       		</table>
