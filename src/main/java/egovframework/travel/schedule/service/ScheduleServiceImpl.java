@@ -50,6 +50,7 @@ public class ScheduleServiceImpl extends EgovAbstractServiceImpl implements Sche
 				System.out.println(temp + " ----------------------------------------------");
 				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 					Element eElement = (Element) nNode;
+					resultMap = new HashMap<String, Object>();
 					for (int i = 0; i < eElement.getChildNodes().getLength() ; i++ ) {
 						if(!eElement.getChildNodes().item(i).getNodeName().equals("#text")){
 							System.out.println(eElement.getChildNodes().item(i).getNodeName() + " : " + getTagValue(eElement.getChildNodes().item(i).getNodeName(), eElement));
