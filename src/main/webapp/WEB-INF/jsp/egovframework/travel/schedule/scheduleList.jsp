@@ -10,24 +10,62 @@
     <title><spring:message code="title.sample" /></title>
     <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
     <script type="text/javaScript" language="javascript" defer="defer">
+    
+    	function fn_scheduleList(){
+    		var frm = document.scheduleForm;
+    		frm.action = "<c:url value='/schedule/scheduleList.do'/>";;
+    		frm.submit();
+    	}
+    	
+    	function fn_scheduleDetail(contId){
+    		var frm = document.scheduleForm;
+    		frm.contId.value = contId;
+    		frm.action = "<c:url value='/schedule/scheduleDetail.do'/>";;
+    		frm.submit();
+    	}
     	
     </script>
 </head>
 
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
-    <form:form id="scheduleForm" name="scheduleForm" method="post">
+    <form id="scheduleForm" name="scheduleForm" method="post">
+    	<input type="hidden" name="contId" />
     	<div id="content_pop">
 	    	<div id="title">
 	       		<ul>
 	       			<li><img src="<c:url value='/images/egovframework/example/title_dot.gif'/>" alt=""/>&nbsp;<spring:message code="schedule.title" /></li>
 	       		</ul>
 	       	</div>
+	       	<div id="search">
+        		<ul>
+        			<li>
+        			    <label for="searchCondition" style="visibility:hidden;">지역 : </label>
+        				<select name="areaSelectList" class="use">
+        					<c:forEach var="area" items="${areaList}" varStatus="status">
+        						<c:choose>
+        							<c:when test="${commandMap.areaSelectList == area.code}">
+	        							<option value="${area.code}" label="${area.name} (${area.code})" selected="selected"/> 
+        							</c:when>
+        							<c:otherwise>
+	        							<option value="${area.code}" label="${area.name} (${area.code})" /> 
+        							</c:otherwise>
+        						</c:choose>
+       						</c:forEach>
+        				</select>
+        			</li>
+        			<li>
+        	            <span class="btn_blue_l">
+        	                <a href="javascript:fn_scheduleList();"><spring:message code="button.search" /></a>
+        	                <img src="<c:url value='/images/egovframework/example/btn_bg_r.gif'/>" style="margin-left:6px;" alt=""/>
+        	            </span>
+        	        </li>
+                </ul>
+        	</div>
 	    	<div id="table">
-	       		<table width="100%" border="0" cellpadding="0" cellspacing="0" summary="카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블">
-	       			<caption style="visibility:hidden">카테고리ID, 케테고리명, 사용여부, Description, 등록자 표시하는 테이블</caption>
+	       		<table width="100%" border="0" cellpadding="0" cellspacing="0">
 	       			<colgroup>
 	       				<col width="60"/>
-	       				<col width="100"/>
+	       				<col width="130"/>
 	       				<col width="?"/>
 	       				<col width="110"/>
 	       				<col width="110"/>
@@ -42,8 +80,8 @@
 	       			<c:forEach var="result" items="${resultList}" varStatus="status">
 	           			<tr>
 	           				<td align="center" class="listtd"><c:out value="${result.areacode}"/></td>
-	           				<td align="left" class="listtd"><c:out value="${result.title}"/></td>
-	           				<td align="center" class="listtd"><c:out value="${result.addr1} ${result.addr2}"/></td>
+	           				<td align="left" class="listtd"><a href="javascript:fn_scheduleDetail('<c:out value="${result.contentid}"/>')" ><c:out value="${result.title}"/></a></td>
+	           				<td align="left" class="listtd"><c:out value="${result.addr1} ${result.addr2}"/></td>
 	           				<td align="center" class="listtd"><c:out value="${result.tel}"/></td>
 	           				<td align="center" class="listtd"><c:out value="${result.mapx}, ${result.mapy}"/></td>
 	           			</tr>
@@ -51,6 +89,6 @@
 	       		</table>
 	       	</div>
        	</div>
-    </form:form>
+    </form>
 </body>
 </html>
