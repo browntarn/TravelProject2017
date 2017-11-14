@@ -63,6 +63,18 @@
 		    				</select>
 		    			</td>
 		    		</tr>
+		    		<tr>
+	        			<td class="tbtd_caption">x좌표</td>
+	        			<td class="tbtd_content">
+	        				<input name="mapx" class="txt" value="${commandMap.mapx}" />
+	        			</td>
+	        		</tr>
+	        		<tr>
+	        			<td class="tbtd_caption">y좌표</td>
+	        			<td class="tbtd_content">
+	        				<input name="mapy" class="txt" value="${commandMap.mapy}" />
+	        			</td>
+	        		</tr>
 		    	</table>
 			</div>
 			<div id="sysbtn">
@@ -76,6 +88,35 @@
             </ul>
     	</div>
        	</div>
+       	
+       	<div id="map" style="width:500px;height:400px;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ca01729a9d3032a9c18230bc5caeb7e1"></script>
+		<script>
+		var mapContainer = document.getElementById('map'); // 지도를 표시할 div 
+		var mapx = ${commandMap.mapx};
+		var mapy = ${commandMap.mapy};
+		
+	    mapOption = { 
+	        center: new daum.maps.LatLng(mapy, mapx), // 지도의 중심좌표
+	        level: 3 // 지도의 확대 레벨
+	    };
+
+		var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+		// 마커가 표시될 위치입니다 
+		var markerPosition  = new daum.maps.LatLng(mapy, mapx); 
+	
+		// 마커를 생성합니다
+		var marker = new daum.maps.Marker({
+		    position: markerPosition
+		});
+	
+		// 마커가 지도 위에 표시되도록 설정합니다
+		marker.setMap(map);
+			
+			
+		</script>
+       	
     </form>
 </body>
 </html>

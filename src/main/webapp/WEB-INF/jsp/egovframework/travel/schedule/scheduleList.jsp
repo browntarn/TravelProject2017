@@ -17,9 +17,11 @@
     		frm.submit();
     	}
     	
-    	function fn_scheduleDetail(contId){
+    	function fn_scheduleDetail(contId,mapx,mapy){
     		var frm = document.scheduleForm;
     		frm.contId.value = contId;
+    		frm.mapx.value = mapx;
+    		frm.mapy.value = mapy;
     		frm.action = "<c:url value='/schedule/scheduleDetail.do'/>";;
     		frm.submit();
     	}
@@ -30,6 +32,8 @@
 <body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
     <form id="scheduleForm" name="scheduleForm" method="post">
     	<input type="hidden" name="contId" />
+    	<input type="hidden" name="mapx" />
+    	<input type="hidden" name="mapy" />
     	<div id="content_pop">
 	    	<div id="title">
 	       		<ul>
@@ -80,7 +84,7 @@
 	       			<c:forEach var="result" items="${resultList}" varStatus="status">
 	           			<tr>
 	           				<td align="center" class="listtd"><c:out value="${result.areacode}"/></td>
-	           				<td align="left" class="listtd"><a href="javascript:fn_scheduleDetail('<c:out value="${result.contentid}"/>')" ><c:out value="${result.title}"/></a></td>
+	           				<td align="left" class="listtd"><a href="javascript:fn_scheduleDetail('<c:out value="${result.contentid}"/>',${result.mapx},${result.mapy})" ><c:out value="${result.title}"/></a></td>
 	           				<td align="left" class="listtd"><c:out value="${result.addr1} ${result.addr2}"/></td>
 	           				<td align="center" class="listtd"><c:out value="${result.tel}"/></td>
 	           				<td align="center" class="listtd"><c:out value="${result.mapx}, ${result.mapy}"/></td>
