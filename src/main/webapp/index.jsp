@@ -135,12 +135,13 @@
                             <li><a href="#work">Portfolio</a></li>
                             <li><a href="#test">Blog</a></li>
                             <li><a href="#contact">Contact</a></li>
+                            <li><a href="schedule/scheduleList.do">국내여행</a></li>
+                            <li><a href="/accomm/accomm001List.do">숙박</a></li>
+                            <li><a href="">음식</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div> 
-
             </nav>
-
             <!--Home Sections-->
            
             <section id="home" class="home bg-black fix">
