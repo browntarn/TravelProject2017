@@ -1,20 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!doctype html>
-<html class="no-js" lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <title>Made One</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- 합쳐지고 최소화된 최신 CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<!-- 부가적인 테마 -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-		<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-		
-		        
         <link rel="icon" type="image/png" href="favicon.ico">
 
         <!--Google Font link-->
@@ -30,19 +23,25 @@
         <link rel="stylesheet" href="assets/css/magnific-popup.css">
         <link rel="stylesheet" href="assets/css/bootsnav.css">
 
+        <!-- xsslider slider css -->
+
+
+        <!--<link rel="stylesheet" href="assets/css/xsslider.css">-->
+
+
+
+
+        <!--For Plugins external css-->
+        <!--<link rel="stylesheet" href="assets/css/plugins.css" />-->
+
         <!--Theme custom css -->
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-        
-	    <!-- Bootstrap core CSS 김성우 추가-->
-		<script src="/css/travel/jquery.min.js"></script>
-		<script src="/css/travel/bootstrap.bundle.min.js"></script>
-		<link href="/css/travel/travel.css" rel="stylesheet">
-        
-        <style>
+        <!--<link rel="stylesheet" href="assets/css/colors/maron.css">-->
 
-        </style>
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+
+        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse">
@@ -142,7 +141,7 @@
             </nav>
 
             <!--Home Sections-->
-           
+
             <section id="home" class="home bg-black fix">
                 <div class="overlay"></div>
                 <div class="container">
@@ -188,71 +187,17 @@
                                     </div><!-- End off slid item -->
                                 </div>
                             </div>
+
                         </div>
+
+
                     </div><!--End off row-->
                 </div><!--End off container -->
-            </section> <!--End off Home Sections-->       
-            <!--  샘플자료 -->
-			<section id="home2" class="home2 fix">
-				<div class="main_home">
-					<div id="myCarousel" class="carousel slide" data-ride="carousel">
-						<ol class="carousel-indicators">
-							<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-							<li data-target="#myCarousel" data-slide-to="1"></li>
-							<li data-target="#myCarousel" data-slide-to="2"></li>
-						</ol>
-						<div class="carousel-inner" role="listbox">
-							<!-- Slide One - Set the background image for this slide in the line below -->
-							<div class="carousel-item active"
-								style="background-image: url('/images/travel/sample1.jpg')">
-								<div class="carousel-caption d-none d-md-block">
-                                    <div class="home_btns m-top-40">
-                                        <a href="" class="btn btn-primary m-top-20">메뉴1</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                    </div>
-									<p>This is a description for the first slide.</p>
-								</div>
-							</div>
-							<!-- Slide Two - Set the background image for this slide in the line below -->
-							<div class="carousel-item"
-								style="background-image: url('/images/travel/sample2.jpg')">
-								<div class="carousel-caption d-none d-md-block">
-                                    <div class="home_btns m-top-40">
-                                        <a href="" class="btn btn-primary m-top-20">메뉴1</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                    </div>
-									<p>This is a description for the second slide.</p>
-								</div>
-							</div>
-							<!-- Slide Three - Set the background image for this slide in the line below -->
-							<div class="carousel-item"
-								style="background-image: url('http://placehold.it/1900x1024&amp;text=Slide Three')">
-								<div class="carousel-caption d-none d-md-block">
-                                    <div class="home_btns m-top-40">
-                                        <a href="" class="btn btn-primary m-top-20">메뉴1</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                        <a href="" class="btn btn-default m-top-20">메뉴2</a>
-                                    </div>
-									<p>This is a description for the third slide.</p>
-								</div>
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev"> 
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="icon-prev"></span> 
-							<span class="sr-only">Previous</span>
-						</a> 
-						<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next"> 
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="icon-next"></span> 
-							<span class="sr-only">Next</span>
-						</a>
-					</div>
-				</div>		
-			</section>
-			<!--Featured Section-->
+            </section> <!--End off Home Sections-->
+
+
+
+            <!--Featured Section-->
             <section id="features" class="features">
                 <div class="container">
                     <div class="row">
@@ -298,6 +243,63 @@
                 </div><!-- End off container -->
             </section><!-- End off Featured Section-->
 
+
+            <!--Business Section-->
+            <section id="business" class="business bg-grey roomy-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_business">
+                            <div class="col-md-6">
+                                <div class="business_slid">
+                                    <div class="slid_shap bg-grey"></div>
+                                    <div class="business_items text-center">
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="business_item">
+                                            <div class="business_img">
+                                                <img src="assets/images/about-img1.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="business_item sm-m-top-50">
+                                    <h2 class="text-uppercase"><strong>Made</strong> is Template For Business</h2>
+                                    <ul>
+                                        <li><i class="fa fa-arrow-circle-right"></i> Clean & Modern Design</li>
+                                        <li><i class="fa  fa-arrow-circle-right"></i> Fully Responsive</li>
+                                        <li><i class="fa  fa-arrow-circle-right"></i> Google Fonts</li>
+                                    </ul>
+                                    <p class="m-top-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit pellentesque eleifend in mi 
+                                        sit amet mattis suspendisse ac ligula volutpat nisl rhoncus sagittis cras suscipit 
+                                        lacus quis erat malesuada lobortis eiam dui magna volutpat commodo eget pretium vitae
+                                        elit etiam luctus risus urna in malesuada ante convallis.</p>
+
+                                    <div class="business_btn">
+                                        <a href="https://bootstrapthemes.co" class="btn btn-default m-top-20">Read More</a>
+                                        <a href="" class="btn btn-primary m-top-20">Buy Now</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- End off Business section -->
+
+
             <!--product section-->
             <section id="product" class="product">
                 <div class="container">
@@ -307,7 +309,6 @@
                             <h5>Clean and Modern design is our best specialist</h5>
                         </div>
 
-						<c:forEach var="i" begin="1" end="3" step="1">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
@@ -520,7 +521,6 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-						</c:forEach>
                     </div><!-- End off row -->
                 </div><!-- End off container -->
             </section><!-- End off Product section -->
