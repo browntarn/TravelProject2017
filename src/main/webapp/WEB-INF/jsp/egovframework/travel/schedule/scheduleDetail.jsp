@@ -1,25 +1,14 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="c"      uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form"   uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="ui"     uri="http://egovframework.gov/ctl/ui"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><spring:message code="title.sample" /></title>
-    <link type="text/css" rel="stylesheet" href="<c:url value='/css/egovframework/sample.css'/>"/>
-    <script type="text/javaScript" language="javascript" defer="defer">
-	    function fn_scheduleList(){
-			var frm = document.scheduleListForm;
-			frm.action = "<c:url value='/schedule/scheduleList.do'/>";
-			frm.submit();
-		}
-	    
-    </script>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/WEB-INF/include/include-header.jspf" %>
 
-<body style="text-align:center; margin:0 auto; display:inline; padding-top:100px;">
+<script type="text/javaScript"  defer="defer">
+    function fn_scheduleList(){
+		var frm = document.scheduleListForm;
+		frm.action = "<c:url value='/schedule/scheduleList.do'/>";
+		frm.submit();
+	}   
+</script>
+
 <form id="scheduleListForm" name="scheduleListForm" method="post">
    	<input type="hidden" name="areaSelectList" value="${commandMap.areaSelectList}"/>
 </form>
@@ -113,10 +102,8 @@
 	
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
-			
-			
 		</script>
        	
     </form>
-</body>
-</html>
+
+<%@ include file="/WEB-INF/include/include-footer.jspf" %>  
