@@ -8,7 +8,11 @@
 		frm.submit();
 	}   
 </script>
-
+<br><br><br><Br><br><Br><br>
+<div class="head_title text-center fix">
+    <h2 class="text-uppercase">${detailResult.eventplace}</h2>
+    <h5>행사기간 : ${detailResult.eventstartdate}</h5>
+</div>
 <form id="scheduleListForm" name="scheduleListForm" method="post">
    	<input type="hidden" name="areaSelectList" value="${commandMap.areaSelectList}"/>
 </form>
