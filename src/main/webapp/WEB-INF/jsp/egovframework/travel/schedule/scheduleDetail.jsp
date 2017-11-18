@@ -11,7 +11,8 @@
 <br><br><br><Br><br><Br><br>
 <div class="head_title text-center fix">
     <h2 class="text-uppercase">${detailResult.eventplace}</h2>
-    <h5>행사기간 : ${detailResult.eventstartdate}</h5>
+    <c:set var="date" value="${detailResult.eventstartdate}" /> 
+    <h5>행사기간 : ${fn:substring(date,0,4)}.${fn:substring(date,4,6)}.${fn:substring(date,6,8)} </h5>
 </div>
 <form id="scheduleListForm" name="scheduleListForm" method="post">
    	<input type="hidden" name="areaSelectList" value="${commandMap.areaSelectList}"/>
@@ -60,12 +61,16 @@
 	        			<td class="tbtd_caption">x좌표</td>
 	        			<td class="tbtd_content">
 	        				<input name="mapx" class="txt" value="${commandMap.mapx}" />
+	        				<c:set var="name" value="${commandMap.mapx}" />                                       
+							${fn:substring(name,0,3)}
 	        			</td>
 	        		</tr>
 	        		<tr>
 	        			<td class="tbtd_caption">y좌표</td>
 	        			<td class="tbtd_content">
 	        				<input name="mapy" class="txt" value="${commandMap.mapy}" />
+	        				<c:set var="name" value="${commandMap.mapy}" />                                       
+							${fn:substring(name,0,2)}
 	        			</td>
 	        		</tr>
 		    	</table>

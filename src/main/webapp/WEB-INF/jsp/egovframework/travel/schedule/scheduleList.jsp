@@ -27,7 +27,7 @@
         <div class="container">
             <div class="main_product roomy-80">
                 <div class="head_title text-center fix">
-                    <h2 class="text-uppercase">전국 축제 & 행사 정보</h2>
+                    <h2 class="text-uppercase">전국 축제 · 행사 정보</h2>
                     <h5>Clean and Modern design is our best specialist</h5>
                 </div>
 
