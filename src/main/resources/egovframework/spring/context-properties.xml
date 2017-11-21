@@ -9,6 +9,15 @@
 	        	<entry key="pageSize" value="10"/>
 	        </map>
 		</property>
+		
+		<property name="extFileName">
+			<set>
+				<map>
+					<entry key="encoding" value="UTF-8"/>
+					<entry key="filename" value="classpath:/egovframework/message/travel.properties"/>
+				</map>
+			</set>
+		</property>
 	</bean>
 	
 </beans>	

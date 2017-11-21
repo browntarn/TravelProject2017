@@ -23,7 +23,6 @@ public class Accomm001Controller {
 	@Resource(name="accomm001Service")
 	private Accomm001Service accomm001Service;
 
-	
 	/**
 	 * 숙박시설을 조회한다.
 	 * @param Map - 목록 조회조건 정보
@@ -39,5 +38,4 @@ public class Accomm001Controller {
 		mv.setViewName("accomm/accomm001List");
 		return mv;
 	}
-
 }
