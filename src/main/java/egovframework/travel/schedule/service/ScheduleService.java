@@ -13,5 +13,8 @@ public interface ScheduleService {
 
 	Map<String, Object> getScheduleDetail(Map<String, Object> commandMap) throws Exception;
 
+	List<Map<String, Object>> getRecentList(Map<String, Object> commandMap) throws Exception;
+
+
 	
 }

@@ -36,9 +36,14 @@ public class ScheduleController {
 	@RequestMapping(value = "schedule/scheduleList.do")
 	public ModelAndView getScheduleList(HttpServletRequest request, @RequestParam Map<String, Object> commandMap) throws Exception {
 		ModelAndView mv = new ModelAndView();
+		if (commandMap.get("areaSelectList") == null) {
+			commandMap.put("areaSelectList", "1");
+		}
 		List<Map<String, Object>> areaList = scheduleService.getAreaList();
 		List<Map<String, Object>> schList = scheduleService.getScheduleList(commandMap);
+		List<Map<String, Object>> recentList = scheduleService.getRecentList(commandMap);
 		request.setAttribute("resultList", schList);
+		request.setAttribute("recentList", recentList);
 		request.setAttribute("areaList", areaList);
 		mv.addObject("commandMap", commandMap);
 		mv.setViewName("schedule/scheduleList");

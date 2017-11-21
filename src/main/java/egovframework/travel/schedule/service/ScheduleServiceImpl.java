@@ -34,15 +34,27 @@ public class ScheduleServiceImpl extends EgovAbstractServiceImpl implements Sche
 			areaCode = (String) commandMap.get("areaSelectList");
 		}
 		
+		String eventStartDate = "20171111";
+		if (commandMap.get("eventStartDate") != null && commandMap.get("eventStartDate") != "") {
+			eventStartDate = (String) commandMap.get("eventStartDate");
+		}
+		String eventEndDate = "20171130";
+		if (commandMap.get("eventEndDate") != null && commandMap.get("eventEndDate") != "") {
+			eventEndDate = (String) commandMap.get("eventEndDate");
+		}
+		
 		String pageSize = "10";
 		String pageNo = "1";
 		String numOfRows = "10";
 		String startPage = "1";
+		
 		url += "&pageSize=" + pageSize;
 		url += "&pageNo=" + pageNo;
 		url += "&numOfRows=" + numOfRows;
 		url += "&startPage=" + startPage;
 		url += "&areaCode=" + areaCode;
+		url += "&eventStartDate=" + eventStartDate.replaceAll("-", "");
+		url += "&eventEndDate=" + eventEndDate.replaceAll("-", "");
 		
 		LOGGER.info("## getScheduleList api url ::::"+url);
 		List resultList = (List) getXmlParsingData(url);
@@ -138,6 +150,37 @@ public class ScheduleServiceImpl extends EgovAbstractServiceImpl implements Sche
 		List resultList = (List) getXmlParsingData(url);
 		commandMap = (Map<String, Object>) resultList.get(0);
 		return commandMap;
+	}
+
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public List<Map<String, Object>> getRecentList(Map<String, Object> commandMap) throws Exception {
+		String url = "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=JZluWzN7N9c08lN8Xa4k4MEWUbNY0aC%2B0UNowlQfK9d0hzoPZQFpLg7KRSnmaACu47KhBTl48XXGOVWap8AWrQ%3D%3D&MobileOS=ETC&MobileApp=AppTest&arrange=A&listYN=Y&eventStartDate=20170901";
+		
+		String areaCode = "1";
+		if (commandMap.get("areaSelectList") != null && commandMap.get("areaSelectList") != "") {
+			areaCode = (String) commandMap.get("areaSelectList");
+		}
+		
+		String pageSize = "10";
+		String pageNo = "1";
+		String numOfRows = "4";
+		String startPage = "1";
+		String arrange = "D";
+		
+		url += "&pageSize=" + pageSize;
+		url += "&pageNo=" + pageNo;
+		url += "&numOfRows=" + numOfRows;
+		url += "&startPage=" + startPage;
+		url += "&areaCode=" + areaCode;
+		url += "&arrange=" + arrange;
+		
+		
+		LOGGER.info("## getRecentList api url ::::"+url);
+		List resultList = (List) getXmlParsingData(url);
+		
+		return resultList;
 	}
 
 }
